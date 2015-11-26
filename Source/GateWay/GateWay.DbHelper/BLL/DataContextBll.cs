@@ -13,11 +13,12 @@ namespace GateWay.DbHelper.BLL
         }
 
         public DbSet<Account> Accounts { get; set; }
+        public DbSet<LogMessage> LogMessages { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new AccountMapping());
-
+            modelBuilder.Configurations.Add(new LogMessageMapping());
         }
     }
 }

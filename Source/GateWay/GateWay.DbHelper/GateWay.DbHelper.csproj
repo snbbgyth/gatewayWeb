@@ -50,12 +50,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\DataContextBll.cs" />
+    <Compile Include="Common\BaseQueueDAL{T}.cs" />
+    <Compile Include="Common\ContextFactory.cs" />
+    <Compile Include="Common\LogHelper.cs" />
     <Compile Include="Mapping\AccountMapping.cs" />
+    <Compile Include="Mapping\LogMessageMapping.cs" />
     <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\LogMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Common\" />
     <Folder Include="Helper\" />
   </ItemGroup>
   <ItemGroup>
