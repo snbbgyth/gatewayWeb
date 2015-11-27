@@ -106,9 +106,7 @@ namespace GateWay.Web.Helper
                 }
             }
         }
-
-         
-
+ 
         public static int ToInt(this long value)
         {
             return Convert.ToInt32(value);
