@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{220CA179-6EC5-4128-B52A-D1A712E73229}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{29A91D33-1B66-474E-A732-DD0B7DC313E8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GateWay.DbHelper</RootNamespace>
-    <AssemblyName>GateWay.DbHelper</AssemblyName>
+    <RootNamespace>GateWay.Crawler</RootNamespace>
+    <AssemblyName>GateWay.Crawler</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -49,26 +52,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\DataContextBll.cs" />
-    <Compile Include="Common\BaseQueueDAL{T}.cs" />
-    <Compile Include="Common\ContextFactory.cs" />
-    <Compile Include="Common\LogHelper.cs" />
-    <Compile Include="Mapping\AccountMapping.cs" />
-    <Compile Include="Mapping\ArticleTypeMapping.cs" />
-    <Compile Include="Mapping\EnglishReadArticleMapping.cs" />
-    <Compile Include="Mapping\LogMessageMapping.cs" />
-    <Compile Include="Model\Account.cs" />
-    <Compile Include="Model\ArticleType.cs" />
-    <Compile Include="Model\EnglishReadArticle.cs" />
-    <Compile Include="Model\LogMessage.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Helper\" />
+    <None Include="App.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <ProjectReference Include="..\GateWay.Core\GateWay.Core.csproj">
+      <Project>{7e19b8da-c4e9-48df-a3f5-89d3c3a5a8e1}</Project>
+      <Name>GateWay.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

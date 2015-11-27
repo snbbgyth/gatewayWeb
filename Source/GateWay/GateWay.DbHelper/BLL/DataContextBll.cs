@@ -14,11 +14,15 @@ namespace GateWay.DbHelper.BLL
 
         public DbSet<Account> Accounts { get; set; }
         public DbSet<LogMessage> LogMessages { get; set; }
+        public DbSet<EnglishReadArticle> EnglishReadArticles { get; set; }
+        public DbSet<ArticleType> ArticleTypes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new AccountMapping());
             modelBuilder.Configurations.Add(new LogMessageMapping());
+            modelBuilder.Configurations.Add(new EnglishReadArticleMapping());
+            modelBuilder.Configurations.Add(new ArticleTypeMapping());
         }
     }
 }

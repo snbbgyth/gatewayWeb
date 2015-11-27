@@ -42,4 +42,41 @@ CREATE TABLE [dbo].[Account](
 
 GO
 
+ CREATE TABLE [dbo].[EnglishReadArticle](
+	[Id] [uniqueidentifier] NOT NULL,
+	[PublishDateTime] [datetime] NULL,
+	[ArticleTypeId] [uniqueidentifier] NULL,
+	[Author] [nvarchar](200) NULL,
+	[Content] [nvarchar](max) NULL,
+	[CreateDateTime] [datetime] NULL,
+	[From] [nvarchar](200) NULL,
+	[FromUrl] [nvarchar](500) NULL,
+	[IsDelete] [bit] NULL,
+	[Summary] [nvarchar](500) NULL,
+	[Title] [nvarchar](200) NULL,
+ CONSTRAINT [PK_EnglishReadArticle] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+
+CREATE TABLE [dbo].[ArticleType](
+	[Id] [uniqueidentifier] NOT NULL,
+	[IsDelete] [bit] NULL,
+	[CreateDateTime] [datetime] NULL,
+	[Name] [nvarchar](200) NULL,
+	[Type] [int] NULL,
+ CONSTRAINT [PK_ArticleType] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+
 
