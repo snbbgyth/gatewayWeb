@@ -45,7 +45,7 @@ namespace GateWay.Core.DAL
                     entity.Content = contentNode.InnerText;
                     entity.Author =string.IsNullOrEmpty(author)?"":author.Trim('\r', '\n').Trim().Replace("作者：","");
                     entity.From = string.IsNullOrEmpty(from) ? "" : from.Trim('\r', '\n').Trim().Replace("来源：", "");
-
+                    DataQueueDal.Instance.Add(entity);
                 }
             }
             catch (Exception ex)

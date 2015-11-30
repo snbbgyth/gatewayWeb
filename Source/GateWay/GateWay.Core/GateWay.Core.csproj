@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\HandleBll.cs" />
+    <Compile Include="DAL\DataQueueDal.cs" />
     <Compile Include="DAL\HandlerBase.cs" />
     <Compile Include="DAL\HandlerFanyiyuedu.cs" />
     <Compile Include="IDAL\ICrawler.cs" />

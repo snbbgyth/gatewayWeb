@@ -88,9 +88,9 @@ namespace GateWay.DbHelper.Common
         //    entityList.ForEach(Add);
         //}
 
-        public abstract void OnNotify(T entity);
+        protected abstract void OnNotify(T entity);
 
-        public T Get()
+        private T Get()
         {
             T entity;
             _messageList.TryDequeue(out entity);
