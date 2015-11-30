@@ -34,7 +34,7 @@ namespace GateWay.Core.DAL
 
                     var fromNode = crawledPage.HtmlDocument.DocumentNode.SelectNodes("//div")
                       .SingleOrDefault(t => t.Attributes.Any(s => s.Name == "class" && s.Value == "page_tip"));
-
+                     
                    var author = fromNode == null ? "" : fromNode.InnerText.Split('|')[0];
                    var from = fromNode == null ? "" : fromNode.InnerText.Split('|').Length>1 ? fromNode.InnerText.Split('|')[1]:"";
                     var entity=new EnglishReadArticle();
