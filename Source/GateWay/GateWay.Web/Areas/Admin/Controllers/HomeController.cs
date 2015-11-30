@@ -11,6 +11,7 @@ namespace GateWay.Web.Areas.Admin.Controllers
         // GET: Admin/Home
         public ActionResult Index()
         {
+            ViewBag.Title = "我学网";
             return View();
         }
     }

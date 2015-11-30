@@ -24,5 +24,7 @@ namespace GateWay.DbHelper.BLL
             modelBuilder.Configurations.Add(new EnglishReadArticleMapping());
             modelBuilder.Configurations.Add(new ArticleTypeMapping());
         }
+
+       
     }
 }

@@ -60,6 +60,9 @@ namespace GateWay.Web.Models
 
         [Display(Name = "记住我?")]
         public bool RememberMe { get; set; }
+
+        [Display(Name = "验证码")]
+        public string Code { get; set; }
     }
 
     public class RegisterViewModel

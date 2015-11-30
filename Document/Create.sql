@@ -34,6 +34,8 @@ CREATE TABLE [dbo].[Account](
 	[Password] [nvarchar](200) NULL,
 	[Phone] [nvarchar](200) NULL,
 	[Sex] [nvarchar](200) NULL,
+	[Email] [nvarchar](200) NULL,
+	[Salt] [nvarchar](200) NULL,
  CONSTRAINT [PK_Account] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC

@@ -82,12 +82,7 @@ namespace GateWay.DbHelper.Common
 
             }
         }
-
-        //public void Add(List<T> entityList)
-        //{
-        //    entityList.ForEach(Add);
-        //}
-
+ 
         protected abstract void OnNotify(T entity);
 
         private T Get()

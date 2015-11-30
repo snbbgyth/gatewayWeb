@@ -22,7 +22,8 @@ namespace GateWay.DbHelper.Mapping
            Property(t => t.Password);
            Property(t => t.Phone);
            Property(t => t.Sex);
-
+           Property(t => t.Email);
+           Property(t => t.Salt);
        }
     }
 }

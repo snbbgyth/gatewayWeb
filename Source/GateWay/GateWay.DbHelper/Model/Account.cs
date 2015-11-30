@@ -24,6 +24,10 @@ namespace GateWay.DbHelper.Model
 
         public string Phone { get; set; }
 
+        public string Email { get; set; }
+
         public string NickName { get; set; }
+
+        public string Salt { get; set; }
     }
 }
