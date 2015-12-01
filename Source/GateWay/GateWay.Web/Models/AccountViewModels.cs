@@ -60,7 +60,7 @@ namespace GateWay.Web.Models
 
         [Display(Name = "记住我?")]
         public bool RememberMe { get; set; }
-
+        [Required]
         [Display(Name = "验证码")]
         public string Code { get; set; }
     }
@@ -73,6 +73,16 @@ namespace GateWay.Web.Models
         public string Email { get; set; }
 
         [Required]
+        [Display(Name = "帐户名称")]
+        [StringLength(100, ErrorMessage = "{0} 必须至少包含 {2} 个字符。", MinimumLength = 4)]
+        public string AccountName { get; set; }
+
+        [Required]
+        [Display(Name = "手机号")]
+        [RegularExpression(@"^1[3458][0-9]{9}$", ErrorMessage = "手机号格式不正确")]
+        public string Phone { get; set; }
+
+        [Required]
         [StringLength(100, ErrorMessage = "{0} 必须至少包含 {2} 个字符。", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "密码")]
@@ -82,6 +92,12 @@ namespace GateWay.Web.Models
         [Display(Name = "确认密码")]
         [Compare("Password", ErrorMessage = "密码和确认密码不匹配。")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "验证码")]
+        public string Code { get; set; }
+
+        public string Message { get; set; }
     }
 
     public class ResetPasswordViewModel
@@ -111,5 +127,11 @@ namespace GateWay.Web.Models
         [EmailAddress]
         [Display(Name = "电子邮件")]
         public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "用户名")]
+        public string UserName { get; set; }
+
+        public string Message { get; set; }
     }
 }

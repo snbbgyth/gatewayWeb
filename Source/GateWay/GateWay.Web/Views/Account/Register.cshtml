@@ -2,7 +2,11 @@
 @{
     ViewBag.Title = "注册";
 }
-
+<script>
+        function RefreshValidateCode(img) {
+            $(img).attr("src", "/Account/GetValidateCode?time=" + new Date().getSeconds());
+        }
+</script>
 <h2>@ViewBag.Title。</h2>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -10,24 +14,53 @@
     @Html.AntiForgeryToken()
     <h4>创建新帐户。</h4>
     <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
+    @*@Html.ValidationSummary("", new { @class = "text-danger" })*@
+    <div class="form-group">
+        @Html.LabelFor(m => m.AccountName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.AccountName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.AccountName, "", new { @class = "text-danger" })
+        </div>
+    </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Phone, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+         </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ConfirmPassword, new {@class = "col-md-2 control-label"})
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.ConfirmPassword, new {@class = "form-control"})
+            @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.Code, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+            @Html.TextBoxFor(m => m.Code, new { @class = "form-control" })
+            <img src="/Account/GetValidateCode" id="UserCodeimg" alt="验证码" width="75" height="42" >
+            <a href="javascript:void(0);" id="UserCodeget" style="margin-left: 10px; width: 80px; height: 23px; line-height: 23px; margin-top: 25px; color: #333; text-decoration: none; cursor: pointer;" onclick=" RefreshValidateCode($('#UserCodeimg')) ">看不清？换一个</a>
+            @Html.ValidationMessageFor(m => m.Code, "", new { @class = "text-danger" })
         </div>
+    </div>
+    <div class="form-group">
+        @Html.Label(Model.Message, new { style = "color: red;font-size: 14px" })
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
